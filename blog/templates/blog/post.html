@@ -1,0 +1,22 @@
+{% extends 'templates/base.html' %}
+{% load bbcode_tags %}
+{% load static %}
+
+{% block content %}
+    {% if post %}
+        <br>
+        <p>{% with content=post.full_body|safe %}{% with content=content|linebreaks %}{% with content=content|striptags %}{{ content|bbcode }}{% endwith %}{% endwith %}{% endwith %}</p>
+    {% else %}
+        <div>
+            <img style="margin-left: auto;margin-right: auto;display: block" src="{% static 'img/404.png' %}">
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block pagetitle %}{% if post %}{{ post.title|striptags }}{% else %}Uh oh!{% endif %} | Blog{% endblock %}
+
+{% block bannertitle %}{% if post %}{{ post.title|striptags }}{% else %}Uh oh!{% endif %}{% endblock %}
+
+{% block bannerdesc %}{% if post %}Published at {{ post.published_date }} by {{ post.author.first_name }}
+    {{ post.author.last_name }}{% else %}We couldn't find the blog post you were looking for, have this meme instead!
+{% endif %}{% endblock %}

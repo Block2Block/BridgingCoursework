@@ -1,0 +1,50 @@
+{% extends 'templates/base.html' %}
+{% load bbcode_tags %}
+
+{% block content %}
+    <h1 style="text-align: center"><u>Blog Posts</u></h1>
+
+    {% for post in posts %}
+        <div style="border-left: solid 1px gray; padding:20px; margin: 20px">
+            <h1>{{ post.title|striptags }}</h1>
+            <h6>Published at {{ post.published_date }} by {{ post.author.first_name }} {{ post.author.last_name }}</h6>
+            <p>{% with content=post.short_body|safe %}{% with content=content|linebreaks %}{% with content=content|striptags %}{{ content|bbcode }}{% endwith %}{% endwith %}{% endwith %}</p>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='{{ post.id }}'">Continue Reading »
+            </button>
+        </div>
+    {% endfor %}
+
+    {% if page %}
+        {% if page > 1 %}
+            <nav aria-label="Announcement Pages">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item{% if page == 1 %} disabled{% endif %}">
+                        <a class="page-link" href="{% if page != 1 %}?page={{ page|add:'-1' }}{% endif %}"
+                                {% if page == 1 %} tabindex="-1"{% endif %}>Previous</a>
+                    </li>
+                    {% for x in pg_array %}
+                        <li class="page-item{% if page == x %} active{% endif %}"><a class="page-link"
+                                                                                     href="?page={{ x }}">{{ x }}</a>
+                        </li>
+                    {% endfor %}
+                    <li class="page-item{% if page == pg_total %} disabled{% endif %}">
+                        <a class="page-link" href="{% if page != pg_total %}?page={{ page|add:'1' }}{% endif %}"
+                                {% if page == pg_total %} tabindex="-1"{% endif %}>Next</a>
+                    </li>
+                </ul>
+            </nav>
+        {% else %}
+            {% if not posts %}
+                <p style="text-align: center;">Looks like there aren't any blog posts yet! Check back soon for one!</p>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+{% endblock %}
+
+{% block pagetitle %}Blog{% endblock %}
+
+{% block bannertitle %}Welcome to my blog.{% endblock %}
+
+{% block bannerdesc %}Here I will post about all sorts of things, from games to work, personal projects to University
+    assignments, hear about what I'm up to!{% endblock %}

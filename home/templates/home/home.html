@@ -1,0 +1,76 @@
+{% extends 'templates/base.html' %}
+{% load static %}
+
+{% block content %}
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="img-fluid" style="margin-left: auto;margin-right: auto;display: block" width="60%"
+                     src="{% static 'img/ProfilePic.png' %}">
+            </div>
+            <div class="col-sm-6" style="margin-bottom: auto;margin-top: auto;display: block">
+                <h1>About Me</h1>
+                <p>I am a freelance developer, specialising in Java and the Spigot API. I am an active member of the
+                    Scout Movement, and have been a part of it for the past 13 years. I like to play a variety of games,
+                    including UNO, THE GAME OF LIFE, The Jackbox Party Games, Minecraft, the list goes on. I am also a really big fan of Electronic Music and all of the different sub-genres.</p>
+                <a href="https://github.com/Block2Block">
+                    <button type="button" class="btn btn-danger">View me on GitHub »</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-6" style="margin-bottom: auto;margin-top: auto;display: block">
+                <h1>The Cult of Cheese</h1>
+                <p>I am the founding member of the Cult of Cheese, alongside Bunni and _Brandon. The Cult of Cheese is a
+                    Discord community, and we are (as you probably guessed by the name) themed around cheese. We have a
+                    Custom Written Discord bot (source available on GitHub), roles for different games (that are
+                    togglable) and many other cool features!</p>
+                <a href="https://discord.gg/vmT6wY7">
+                    <button type="button" class="btn btn-danger">Join our Discord »</button>
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-fluid" style="margin-left: auto;margin-right: auto;display: block" width="60%"
+                     src="{% static 'img/logo.gif' %}">
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-sm-6" style="margin-bottom: auto;margin-top: auto;display: block">
+                <a href="https://mineplex.com/home/"><img class="img-fluid"
+                                                          style="margin-left: auto;margin-right: auto;display: block"
+                                                          width="60%" src="{% static 'img/mineplex.png' %}"></a>
+            </div>
+            <div class="col-sm-6">
+                <h1>Mineplex</h1>
+                <p>I am a current Senior Moderator for the Mineplex Network, working as an EU Event Manager on the Event
+                    Squad Sr. Mod team. I have been staff for over 4 years, with almost just as long on the events team.
+                    I have been an event manager for just under a year and a half, and have hosted probably close to
+                    several hundred events. I have also hosted and managed Mineplex's Teamspeak Music Bot, have
+                    previously worked on Quality Assurance and Teamspeak Staff and issued well over 1500+
+                    punishments.</p>
+                <a href="https://www.mineplex.com/members/block2block.58/">
+                    <button type="button" class="btn btn-danger">View my Mineplex Profile »</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block pagetitle %}Home{% endblock %}
+
+{% block bannertitle %}Hi, I'm Ethan{% endblock %}
+
+{% block bannerdesc %}Although most people call me block. I am a student at the University of Birmingham studying MEng
+    Computer Science/Software Engineering.{% endblock %}
