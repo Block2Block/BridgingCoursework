@@ -8,7 +8,7 @@
         <div style="border-left: solid 1px gray; padding:20px; margin: 20px">
             <h1>{{ post.title|striptags }}</h1>
             <h6>Published at {{ post.published_date }} by {{ post.author.first_name }} {{ post.author.last_name }}</h6>
-            <p>{% with content=post.short_body|safe %}{% with content=content|linebreaks %}{% with content=content|striptags %}{{ content|bbcode }}{% endwith %}{% endwith %}{% endwith %}</p>
+            <p>{% with content=post.get_short_body|safe %}{% with content=content|linebreaks %}{% with content=content|striptags %}{{ content|bbcode }}{% endwith %}{% endwith %}{% endwith %}</p>
             <button type="button" class="btn btn-secondary" onclick="window.location.href='{{ post.id }}'">Continue Reading »
             </button>
         </div>

@@ -5,7 +5,7 @@
 {% block content %}
     {% if post %}
         <br>
-        <p>{% with content=post.full_body|safe %}{% with content=content|linebreaks %}{% with content=content|striptags %}{{ content|bbcode }}{% endwith %}{% endwith %}{% endwith %}</p>
+        <p>{% with content=post.body|safe %}{% with content=content|linebreaks %}{% with content=content|striptags %}{{ content|bbcode }}{% endwith %}{% endwith %}{% endwith %}</p>
     {% else %}
         <div>
             <img style="margin-left: auto;margin-right: auto;display: block" src="{% static 'img/404.png' %}">
