@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8)!u14natgna@8+tkp)dg^rafdu=o0@p2t-2iir56rjk8gd9o&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'ethanpb.pythonanywhere.com', '192.168.0.92']
+ALLOWED_HOSTS = ['127.0.0.1', 'ethanpb.pythonanywhere.com', '192.168.0.92', 'block2block.me']
 
 # Application definition
 
