@@ -1,5 +1,5 @@
 Django==2.2.24
 django-jet==1.0.8
 django-precise-bbcode==1.2.10
-Pillow==8.2.0
+Pillow==9.0.1
 pytz==2020.1
