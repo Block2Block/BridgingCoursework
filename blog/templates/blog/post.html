@@ -15,6 +15,8 @@
 
 {% block pagetitle %}{% if post %}{{ post.title|striptags }}{% else %}Uh oh!{% endif %} | Blog{% endblock %}
 
+{% block pagedesc %}{% if post %}{{ post.title|striptags }}{% else %}Uh oh!{% endif %} | Blog{% endblock %}
+
 {% block bannertitle %}{% if post %}{{ post.title|striptags }}{% else %}Uh oh!{% endif %}{% endblock %}
 
 {% block bannerdesc %}{% if post %}Published at {{ post.published_date }} by {{ post.author.first_name }}
